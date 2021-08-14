@@ -65,8 +65,7 @@ public class ArrayStack {
         }
 
         for (int i = 0; i < this.stack.length; i++) {
-            System.out.printf("stack[%d] = %d\n", i, this.stack[i]);
-
+            System.out.println("stack[" + i + "] = " + this.stack[i] + "\n");
         }
     }
 
