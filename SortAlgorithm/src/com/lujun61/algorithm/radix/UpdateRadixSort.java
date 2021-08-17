@@ -1,7 +1,12 @@
-package com.lujun61.algorithm;
+package com.lujun61.algorithm.radix;
 
 import java.util.Arrays;
 
+/**
+ * @description 本类是基于RadixSort类的改进
+ * @author Jun Lu
+ * @date 2021-08-17 16:05:09
+ */
 public class UpdateRadixSort {
     public static void main(String[] args) {
         //定义需要排序的数组

@@ -1,4 +1,4 @@
-package com.lujun61.algorithm;
+package com.lujun61.algorithm.radix;
 
 import java.util.Arrays;
 
@@ -14,7 +14,13 @@ public class RadixSort {
         radixSort(arrays);
     }
 
-
+    /**
+     * @param arrays 传入的待排序的数组
+     * @return void
+     * @description 基数排序核心方法
+     * @author Jun Lu
+     * @date 2021-08-17 15:38:12
+     */
     private static void radixSort(int[] arrays) {
         //1、获取传入的待排序的数组中最大值的长度（位数）
         int max = 0;

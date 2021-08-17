@@ -1,4 +1,4 @@
-package com.lujun61.algorithm;
+package com.lujun61.algorithm.radix;
 
 
 import java.util.Arrays;
