@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
         //使用工具类遍历二维数组
-        int[][] test = new int[12][12];
+        int[][] test = new int[11][12];
         System.out.println("length = " + test.length);
         test[1][1] = 1;
         System.out.println("length = " + test[1].length);
@@ -26,5 +26,15 @@ public class Test {
 
         System.out.println(1234 / 100 % 10);//2
         System.out.println(34 / 100 % 10);//0
+
+        System.out.println((int)'A');
+        System.out.println("-----" + up('a'));
+    }
+
+
+
+    public static char up(char a) {
+
+        return (char)(a - 32);
     }
 }

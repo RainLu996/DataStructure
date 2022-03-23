@@ -49,7 +49,7 @@ public class RecursionTest {
      */
     public static void buildMap(int row, int column, int[][] map) {
         //设置上下两堵墙
-        for (int i = 0; i < row; i++) {
+        for (int i = 1; i < row - 1; i++) {
             map[i][0] = 1;
             map[i][column - 1] = 1;
         }

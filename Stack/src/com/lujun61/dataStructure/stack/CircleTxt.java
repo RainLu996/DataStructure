@@ -27,13 +27,12 @@ public class CircleTxt {
 
         //拼接弹栈后的所得的字符串
         StringBuilder builder = new StringBuilder();
-        int currentLength = arrayStack.length();//为什么不直接写入循环呢？因为此值不是固定的！！！
+        int currentLength = arrayStack.length();//为什么不直接写入循环呢？因为此值不是固定的！！！每POP一次就会改变（减一）。
         if (!arrayStack.isEmpty()) {
             for (int i = 0; i < currentLength; i++) {
                 builder.append(arrayStack.pop());
             }
         }
-
         return builder.toString().equals(val);
     }
 }

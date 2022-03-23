@@ -41,9 +41,11 @@ public class DobLinkedList {
         if (isRepeat) {
             throw new ProductRepeatException("此商品已存在！");
         } else {
+            //处理后置结点
             node.next = temp.next;
             temp.next = node;
 
+            //处理前置结点
             temp.next.pre = node;
             node.pre = temp;
         }
@@ -86,7 +88,7 @@ public class DobLinkedList {
 
     /**
      * 删除结点
-     * @param id 只需要传入结点即可（结点有着唯一性）
+     * @param id 只需要传入结点id即可（结点有着唯一性）
      */
     public void deleteNode(int id) {
         DobNode temp = this.head.next;
@@ -102,7 +104,7 @@ public class DobLinkedList {
 
         if (flg) {
             temp.pre.next = temp.next;
-            if (temp.next != null) {//如果后继结点不存在，则：temp.next == null; null.pre == NullPointerException!
+            if (temp.next != null) {//如果后继结点不存在，则：temp.next == null; null.pre ==> NullPointerException!
                 temp.next.pre = temp.pre;
             }
         } else {

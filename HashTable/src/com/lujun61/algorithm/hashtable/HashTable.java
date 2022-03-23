@@ -1,5 +1,7 @@
 package com.lujun61.algorithm.hashtable;
 
+import java.util.List;
+
 /**
  * @description 哈希表（采用拉链法解决哈希冲突）
  * @author Jun Lu
@@ -52,12 +54,15 @@ public class HashTable {
     public void getByID(int id) {
         int hashVal = hashCode(id);
 
-        Student student = studentLinkedLists[hashVal].findByID(id);
-        if (student != null) {
-            System.out.println("在第<" + (hashVal + 1) +
-                    ">条链表中找到了学员；学员信息为--->姓名：" + student.name + "\t编号：" + student.id);
-        } else {
-            throw new DoNotElementException("链表中无任何元素！");
+        List<Student> students = studentLinkedLists[hashVal].findByID(id);
+        for (Student student :
+                students) {
+            if (student != null) {
+                System.out.println("在第<" + (hashVal + 1) +
+                        ">条链表中找到了学员；学员信息为--->姓名：" + student.name + "\t编号：" + student.id);
+            } else {
+                throw new DoNotElementException("链表中无任何元素！");
+            }
         }
     }
 }

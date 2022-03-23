@@ -1,5 +1,8 @@
 package com.lujun61.algorithm.hashtable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @description 存放Student学生类型的链表
  * @author Jun Lu
@@ -21,12 +24,12 @@ public class StudentLinkedList {
             return;
         }
 
-        /*不可取（不知道为什么）
-        Student temp = head.next;
+        //不可取（不知道为什么）
+        /*Student temp = head.next;
         while (temp != null) {
             temp = temp.next;
         }
-        temp = stu;*/
+       temp = stu;*/
 
         Student temp = head;
         while (temp.next != null) {
@@ -64,19 +67,20 @@ public class StudentLinkedList {
      * @author Jun Lu
      * @date 2021-08-19 19:47:26
      */
-    public Student findByID(int id) {
+    public List<Student> findByID(int id) {
         if (head == null) {
             throw new DoNotElementException("此链表为空！");
         }
 
+        List<Student> stuList = new ArrayList<>();
+
         Student temp = head;
         while (temp != null) {
-            if (this.head.id == id) {
-                return temp;
+            if (temp.id == id) {
+                stuList.add(temp);
             }
-
             temp = temp.next;
         }
-        return null;
+        return stuList;
     }
 }

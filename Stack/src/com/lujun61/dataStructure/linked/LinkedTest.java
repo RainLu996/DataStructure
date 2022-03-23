@@ -13,10 +13,13 @@ public class LinkedTest {
 
         list.upForIdInsert(n_2);
         list.upForIdInsert(n_3);
+        list.upForIdInsert(n_3);
+        list.upForIdInsert(n_3);
         list.upForIdInsert(n_4);
         list.upForIdInsert(n_1);
 
         list.traverse();
+        System.out.println(list.getListLength());
 
         System.out.println("--------------------------------------------");
 

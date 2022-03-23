@@ -11,6 +11,9 @@ import com.lujun61.dataStructure.runtimeException.StackIsFullException;
  * 5、判断当前栈是否是满栈
  */
 
+/* 静态栈：
+*   元素与元素之间的存储是连续的。
+*  */
 public class ArrayStack {
     public ArrayStack() {}
 

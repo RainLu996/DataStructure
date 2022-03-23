@@ -2,10 +2,9 @@ package com.lujun61.dataStructure.linked;
 
 import com.lujun61.dataStructure.runtimeException.DoNotMatchingException;
 import com.lujun61.dataStructure.runtimeException.LinkedListIsEmptyException;
-import com.lujun61.dataStructure.runtimeException.ProductRepeatException;
 
 /*
-根据带有头部的单链表，实现商品增删改查，并且针对商品id进行从小到大排序，完成排行榜
+    根据带有头部的单链表，实现商品增删改查，并且针对商品id进行从小到大排序，完成排行榜
  */
 //总结：涉及到两个结点时，带上next;未然则不带
 public class LinkedList {
@@ -16,7 +15,7 @@ public class LinkedList {
      * @param node 将插入的目标结点
      */
     public void tailInsert(Node node) {
-        Node temp = this.head;
+        Node temp = this.head;//为了不改变head指针的值
 
         while (temp.next != null) {
             temp = temp.next;
@@ -43,8 +42,10 @@ public class LinkedList {
         }
 
         if (isRepeat) {
-            throw new ProductRepeatException("此商品已存在！");
+            //throw new ProductRepeatException("此商品已存在！");
+            return; //如果不想抛出异常，直接return掉（无操作）即可
         } else {
+            //往当前结点后插入值（即：替换掉原先的结点）
             node.next = temp.next;
             temp.next = node;
         }
@@ -71,16 +72,16 @@ public class LinkedList {
             throw new LinkedListIsEmptyException("链表为空！");
         }
 
-        boolean isRepeat = false;//设置布尔标记，若匹配到对应的结点，则修改为true
+        boolean isMatch = false;//设置布尔标记，若匹配到对应的结点，则修改为true
         while (temp != null) {
             if (temp.id == node.id) {
-                isRepeat = true;
+                isMatch = true;
                 break;
             }
             temp = temp.next;
         }
 
-        if (isRepeat) {
+        if (isMatch) {
             //找到了目标结点，则修改数据
             temp.name = node.name;
             temp.price = node.price;
@@ -95,17 +96,17 @@ public class LinkedList {
      */
     public void deleteNode(int id) {
         Node temp = this.head;
-        boolean isRepeat = false;
+        boolean isMatch = false;
 
         while (temp.next != null) {//temp是被删除结点(temp.next)前的结点，如果被删除结点(temp.next)不存在，那就是没找到
             if (temp.next.id == id) {
-                isRepeat = true;
+                isMatch = true;
                 break;
             }
             temp = temp.next;
         }
 
-        if (isRepeat) {
+        if (isMatch) {
             temp.next = temp.next.next;
         } else {
             throw new DoNotMatchingException("未在链表中找到目标结点！");
@@ -129,7 +130,7 @@ public class LinkedList {
 
     /**
      * 统计链表中的元素个数
- +    * @return 返回链表中的元素个数
+     * @return 返回链表中的元素个数
      */
     public int getListLength() {
         if (this.isEmpty()) {
@@ -139,9 +140,10 @@ public class LinkedList {
         int count = 0;
         Node temp = this.head;
         while (temp.next != null) {//不算头结点
-            count++;
             temp = temp.next;
+            count++;
         }
+
         return count;
     }
 }

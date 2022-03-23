@@ -3,7 +3,7 @@ package com.lujun61.algorithm.radix;
 import java.util.Arrays;
 
 /**
- * @description 本类是基于RadixSort类的改进
+ * @description 本类是基于RadixSort类的改进(动态扩展基数)
  * @author Jun Lu
  * @date 2021-08-17 16:05:09
  */
@@ -24,7 +24,7 @@ public class UpdateRadixSort {
      */
     private static void radixSort(int[] arrays) {
         //1、获取传入的待排序的数组中最大值的长度（基数位数）
-        int max = 0;
+        int max = arrays[0];
         for (int array : arrays) {
             if (array > max) {
                 max = array;

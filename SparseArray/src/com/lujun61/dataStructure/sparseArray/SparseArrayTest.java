@@ -13,11 +13,11 @@ public class SparseArrayTest {
         int row = 11;//行
         int column = 11;//列
         int[][] arrays = new int[row][column];
-        arrays[1][2] = 1;//有效数据
-        arrays[2][4] = 2;//有效数据
+        arrays[1][2] = 1;//插入有效数据
+        arrays[2][4] = 2;//插入有效数据
 
 
-        //计算棋盘中的有效数据
+        //计算棋盘中的有效数据个数
         int count = validate(arrays);
         traverse(arrays);//遍历arrays数组
 
@@ -55,7 +55,7 @@ public class SparseArrayTest {
     }
 
     /**
-     * 统计原数组中的有效数据
+     * 统计原数组中的有效数据个数
      * @param arrays 原数组
      * @return 原数组中的有效数据
      */
