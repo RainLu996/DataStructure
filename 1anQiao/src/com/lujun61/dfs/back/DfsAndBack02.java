@@ -39,8 +39,11 @@ public class DfsAndBack02 {
             return;
         }
         for (int i = 0; i < len; i++) {
-            //元素被使用过；当前元素等于列表中前一个元素时，如果前一个元素被使用过，才能将当前元素入列表
-            // （确保重复元素之间的排列只有一种排列方式）。
+            /*
+                (i > 0 && nums[i - 1] == nums[i] && !used[i - 1])：去重原理解释：
+                元素被使用过；当前元素等于列表中前一个元素时，如果前一个元素被使用过，才能将当前元素入列表
+             （确保重复元素之间的排列只有一种排列方式）。
+            */
             if (used[i] || (i > 0 && nums[i - 1] == nums[i] && !used[i - 1])) continue;
             path.addLast(nums[i]);
             used[i] = true;

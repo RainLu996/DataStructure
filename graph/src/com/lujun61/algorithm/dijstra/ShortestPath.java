@@ -28,7 +28,7 @@ public class ShortestPath {
         matrix[4][5] = 5;
         matrix[4][6] = 1;
 
-        int source = 1;
+        int source = 0;
 
         dijstra(matrix, source);
     }
@@ -36,8 +36,8 @@ public class ShortestPath {
     /**
      * 迪杰斯特拉算法
      *
-     * @param matrix
-     * @param source
+     * @param matrix  路径
+     * @param source  寻径的起点
      */
     public static void dijstra(int[][] matrix, int source) {
         //最短路径长度

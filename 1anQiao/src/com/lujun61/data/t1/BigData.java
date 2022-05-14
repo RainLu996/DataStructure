@@ -1,4 +1,4 @@
-package com.lujun61.data;
+package com.lujun61.data.t1;
 
 import java.math.BigInteger;
 

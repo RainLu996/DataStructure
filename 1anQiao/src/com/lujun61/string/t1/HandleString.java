@@ -1,4 +1,4 @@
-package com.lujun61.string;
+package com.lujun61.string.t1;
 
 /*
      把abcd....s共19个字母组成的序列重复拼接106次，得到长度为2014的串。

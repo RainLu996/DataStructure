@@ -48,7 +48,6 @@ public class DfsAndBack01 {
             dfs(nums, len, depth + 1, path, res, used);
             used[i] = false;
             path.removeLast();
-
         }
     }
 }

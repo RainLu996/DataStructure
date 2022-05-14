@@ -24,6 +24,9 @@ public class 时间显示 {
         long hours = minutes / 60;
         long hour = hours % 24;
 
+        /**
+         * 格式符'%02d'中 2d 前面的 前导符0 表示输出数据时，若左边 有多余位，则补0。
+         */
         System.out.printf("%02d:%02d:%02d", hour, minute, second);
     }
 }

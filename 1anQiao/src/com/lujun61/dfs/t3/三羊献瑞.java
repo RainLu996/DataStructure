@@ -15,7 +15,11 @@ public class 三羊献瑞 {
 
     public static void dfs(int depth) {
         //递归结束条件：代表一种 全排列结果 的完整生成
-        if (depth == len) check();
+        if (depth == len) {
+            check();
+            return;
+        }
+
 
         for (int i = 0; i <= 9; i++) {
             if (used[i]) continue;     //全排列加入元素
@@ -29,7 +33,7 @@ public class 三羊献瑞 {
 
     /**
      * ABCD + EFGB = EFCBH
-     *
+     * <p>
      * 注意点：参与全排列的元素有0~9，共计 十个 元素
      */
     public static void check() {

@@ -23,11 +23,14 @@ public class 货物摆放 {
         }
 
         int res = 0;
+        /**
+         * 详情请参见API用法
+         */
         Long[] array = s.toArray(new Long[0]);
-        for (Long aLong : array) {
-            for (Long aLong1 : array) {
-                for (Long aLong2 : array) {
-                    if (aLong * aLong1 * aLong2 == num) {
+        for (Long aLong1 : array) {
+            for (Long aLong2 : array) {
+                for (Long aLong3 : array) {
+                    if (aLong1 * aLong2 * aLong3 == num) {
                         res++;
                     }
                 }

@@ -13,7 +13,7 @@ public class k倍区间 {
         //注意要用long数组,数据量较大
         long[] arr = new long[N + 1];
         //Map前面也得用Long,因为有long参与的运算返回值也是long
-        Map<Long, Integer> map = new HashMap<Long, Integer>();
+        Map<Long, Integer> map = new HashMap<>();
         //获得前缀和数组
         for (int i = 0; i < N; ++i) {
             arr[i + 1] = arr[i] + sc.nextLong();

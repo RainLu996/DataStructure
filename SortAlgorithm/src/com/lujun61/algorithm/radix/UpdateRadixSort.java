@@ -3,7 +3,7 @@ package com.lujun61.algorithm.radix;
 import java.util.Arrays;
 
 /**
- * @description 本类是基于RadixSort类的改进(动态扩展基数)
+ * @description RadixSort(动态扩展基数)
  * @author Jun Lu
  * @date 2021-08-17 16:05:09
  */
@@ -39,10 +39,9 @@ public class UpdateRadixSort {
         int[] assistArray = new int[10];
 
         //基数有几位，就循环多少次
-        for (int i = 0, j = 1; i < maxNumLength; i++, j *= 10) {
-            for (int val:
-                    arrays) {
-                int unitRadix = val / j % 10;//取出各个数据个位的值
+        for (int i = 0, j = 1; i < maxNumLength; i++, j *= 10) {   // 个位、十位 ……
+            for (int val : arrays) {
+                int unitRadix = val / j % 10;//取出各个数据位的值
 
                 buckets[unitRadix][assistArray[unitRadix]++] = val;
             }
